@@ -24,7 +24,7 @@ printf("Generating random numbers ...\n");
  }
 
  printf("\nWriting numbers to file ...\n");
- int wr = open("write.txt",O_RDWR);
+ int wr = open("write.txt",O_WRONLY | O_CREAT, 0644);
  int bytes_written = write(wr, rand, 10 * sizeof(int));
  //printf("writing file open: %d\n", wr);
  //printf("bytes written: %d\n", bytes_written);
